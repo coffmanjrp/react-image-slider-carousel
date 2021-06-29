@@ -1,3 +1,4 @@
+import ImageSlider from './components/ImageSlider';
 import './App.css';
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div className="App">
       <main>
         <h1>Hello World</h1>
+        <ImageSlider />
       </main>
     </div>
   );
