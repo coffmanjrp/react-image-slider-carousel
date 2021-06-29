@@ -1,3 +1,9 @@
+.header {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+
 .slider {
   position: relative;
   display: flex;
@@ -32,4 +38,14 @@
   z-index: 10;
   cursor: pointer;
   user-select: none;
+}
+
+.slide {
+  opacity: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  transition: all 1000ms ease;
+  transform: scale(1.08);
 }

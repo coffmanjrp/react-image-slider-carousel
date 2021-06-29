@@ -4,12 +4,17 @@ import { SliderData } from '../utils/SliderData';
 
 export default function ImageSlider() {
   const [current, setCurrent] = useState(0);
-  const length = SliderData.length;
+  const length = SliderData.length - 1;
 
-  const handlePrev = () => {};
+  const handlePrev = () => {
+    setCurrent((current) => (current <= 0 ? length : current - 1));
+  };
 
-  const handleNext = () => {};
+  const handleNext = () => {
+    setCurrent((current) => (current >= length ? 0 : current + 1));
+  };
 
+  console.log(current);
   return (
     <section className="slider">
       <div className="left-arrow" onClick={handlePrev}>
@@ -19,12 +24,18 @@ export default function ImageSlider() {
         <FaArrowAltCircleRight />
       </div>
       {SliderData.map((slide, index) => (
-        <img
+        <div
           key={index}
-          src={slide.image}
-          alt={`slide-${index + 1}`}
-          className="image"
-        />
+          className={index === current ? 'slide active' : 'slide'}
+        >
+          {index === current && (
+            <img
+              src={slide.image}
+              alt={`slide-${index + 1}`}
+              className="image"
+            />
+          )}
+        </div>
       ))}
     </section>
   );

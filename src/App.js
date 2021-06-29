@@ -3,12 +3,12 @@ import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <main>
-        <h1>Hello World</h1>
-        <ImageSlider />
-      </main>
-    </div>
+    <main>
+      <header className="header">
+        <h1>React Image Slider Carousel</h1>
+      </header>
+      <ImageSlider />
+    </main>
   );
 }
 
