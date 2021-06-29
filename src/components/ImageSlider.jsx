@@ -15,11 +15,16 @@ export default function ImageSlider() {
       <div className="left-arrow" onClick={handlePrev}>
         <FaArrowAltCircleLeft />
       </div>
-      <div className="left-arrow" onClick={handleNext}>
+      <div className="right-arrow" onClick={handleNext}>
         <FaArrowAltCircleRight />
       </div>
       {SliderData.map((slide, index) => (
-        <img key={index} src={slide.image} alt={`slide-${index + 1}`} />
+        <img
+          key={index}
+          src={slide.image}
+          alt={`slide-${index + 1}`}
+          className="image"
+        />
       ))}
     </section>
   );
